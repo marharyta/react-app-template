@@ -8,15 +8,20 @@ module.exports = {
     filename: 'main.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015']
+          presets: ['es2015', 'react']
         }
       }
     ]
+  },
+  resolve: {
+    modules: [
+      path.join(__dirname, 'node_modules'),
+    ],
   },
   stats: {
     colors: true
